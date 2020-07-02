@@ -1,5 +1,6 @@
 /* showtty.c
  * displays some current tty settings
+ * TODO: support the display of special keys such as Backspace(ascii 127)
  */
 
 #include <stdio.h>
