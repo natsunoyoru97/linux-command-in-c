@@ -26,7 +26,7 @@ int get_response(char * question)
  */
 {
 	printf("%s(y/n)?", question);
-	for ( ; ; ) {
+	while (1) {
 		switch(getchar()) {
 			case 'y':
 			case 'Y': return 0;

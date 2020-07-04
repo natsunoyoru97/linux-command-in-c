@@ -1,0 +1,173 @@
+
+play_again:	file format Mach-O 64-bit x86-64
+
+
+Disassembly of section __TEXT,__text:
+
+0000000100000e80 _main:
+100000e80: 55                          	pushq	%rbp
+100000e81: 48 89 e5                    	movq	%rsp, %rbp
+100000e84: 48 83 ec 10                 	subq	$16, %rsp
+100000e88: c7 45 fc 00 00 00 00        	movl	$0, -4(%rbp)
+100000e8f: c7 45 f8 00 00 00 00        	movl	$0, -8(%rbp)
+100000e96: 48 8d 3d e3 00 00 00        	leaq	227(%rip), %rdi
+100000e9d: e8 0e 00 00 00              	callq	14 <_get_response>
+100000ea2: 89 45 f8                    	movl	%eax, -8(%rbp)
+100000ea5: 8b 45 f8                    	movl	-8(%rbp), %eax
+100000ea8: 48 83 c4 10                 	addq	$16, %rsp
+100000eac: 5d                          	popq	%rbp
+100000ead: c3                          	retq
+100000eae: 66 90                       	nop
+
+0000000100000eb0 _get_response:
+100000eb0: 55                          	pushq	%rbp
+100000eb1: 48 89 e5                    	movq	%rsp, %rbp
+100000eb4: 48 83 ec 20                 	subq	$32, %rsp
+100000eb8: 48 89 7d f0                 	movq	%rdi, -16(%rbp)
+100000ebc: 48 8b 75 f0                 	movq	-16(%rbp), %rsi
+100000ec0: 48 8d 3d d9 00 00 00        	leaq	217(%rip), %rdi
+100000ec7: b0 00                       	movb	$0, %al
+100000ec9: e8 88 00 00 00              	callq	136 <play_again.c+0x100000f56>
+100000ece: e8 7d 00 00 00              	callq	125 <play_again.c+0x100000f50>
+100000ed3: 89 c1                       	movl	%eax, %ecx
+100000ed5: 83 e8 ff                    	subl	$-1, %eax
+100000ed8: 89 4d ec                    	movl	%ecx, -20(%rbp)
+100000edb: 0f 84 55 00 00 00           	je	85 <_get_response+0x86>
+100000ee1: e9 00 00 00 00              	jmp	0 <_get_response+0x36>
+100000ee6: 8b 45 ec                    	movl	-20(%rbp), %eax
+100000ee9: 83 e8 4e                    	subl	$78, %eax
+100000eec: 0f 84 44 00 00 00           	je	68 <_get_response+0x86>
+100000ef2: e9 00 00 00 00              	jmp	0 <_get_response+0x47>
+100000ef7: 8b 45 ec                    	movl	-20(%rbp), %eax
+100000efa: 83 e8 59                    	subl	$89, %eax
+100000efd: 0f 84 27 00 00 00           	je	39 <_get_response+0x7a>
+100000f03: e9 00 00 00 00              	jmp	0 <_get_response+0x58>
+100000f08: 8b 45 ec                    	movl	-20(%rbp), %eax
+100000f0b: 83 e8 6e                    	subl	$110, %eax
+100000f0e: 0f 84 22 00 00 00           	je	34 <_get_response+0x86>
+100000f14: e9 00 00 00 00              	jmp	0 <_get_response+0x69>
+100000f19: 8b 45 ec                    	movl	-20(%rbp), %eax
+100000f1c: 83 e8 79                    	subl	$121, %eax
+100000f1f: 0f 85 1d 00 00 00           	jne	29 <_get_response+0x92>
+100000f25: e9 00 00 00 00              	jmp	0 <_get_response+0x7a>
+100000f2a: c7 45 fc 00 00 00 00        	movl	$0, -4(%rbp)
+100000f31: e9 11 00 00 00              	jmp	17 <_get_response+0x97>
+100000f36: c7 45 fc 01 00 00 00        	movl	$1, -4(%rbp)
+100000f3d: e9 05 00 00 00              	jmp	5 <_get_response+0x97>
+100000f42: e9 87 ff ff ff              	jmp	-121 <_get_response+0x1e>
+100000f47: 8b 45 fc                    	movl	-4(%rbp), %eax
+100000f4a: 48 83 c4 20                 	addq	$32, %rsp
+100000f4e: 5d                          	popq	%rbp
+100000f4f: c3                          	retq
+
+Disassembly of section __TEXT,__stubs:
+
+0000000100000f50 __stubs:
+100000f50: ff 25 aa 10 00 00           	jmpq	*4266(%rip)
+100000f56: ff 25 ac 10 00 00           	jmpq	*4268(%rip)
+
+Disassembly of section __TEXT,__cstring:
+
+0000000100000f80 __cstring:
+100000f80: 44 6f                       	outsl	(%rsi), %dx
+100000f82: 20 79 6f                    	andb	%bh, 111(%rcx)
+100000f85: 75 20                       	jne	32 <__cstring+0x27>
+100000f87: 77 61                       	ja	97 <play_again.c+0x100000fea>
+100000f89: 6e                          	outsb	(%rsi), %dx
+100000f8a: 74 20                       	je	32 <play_again.c+0x100000fac>
+100000f8c: 61                          	<unknown>
+100000f8d: 6e                          	outsb	(%rsi), %dx
+100000f8e: 6f                          	outsl	(%rsi), %dx
+100000f8f: 74 68                       	je	104 <play_again.c+0x100000ff9>
+100000f91: 65 72 20                    	jb	32 <play_again.c+0x100000fb4>
+100000f94: 74 72                       	je	114 <play_again.c+0x100001008>
+100000f96: 61                          	<unknown>
+100000f97: 6e                          	outsb	(%rsi), %dx
+100000f98: 73 61                       	jae	97 <play_again.c+0x100000ffb>
+100000f9a: 63 74 69 6f                 	movslq	111(%rcx,%rbp,2), %esi
+100000f9e: 6e                          	outsb	(%rsi), %dx
+100000f9f: 00 25 73 28 79 2f           	addb	%ah, 796469363(%rip)
+100000fa5: 6e                          	outsb	(%rsi), %dx
+100000fa6: 29 3f                       	subl	%edi, (%rdi)
+100000fa8: 00                          	<unknown>
+
+Disassembly of section __TEXT,__unwind_info:
+
+0000000100000fac __unwind_info:
+100000fac: 01 00                       	addl	%eax, (%rax)
+100000fae: 00 00                       	addb	%al, (%rax)
+100000fb0: 1c 00                       	sbbb	$0, %al
+100000fb2: 00 00                       	addb	%al, (%rax)
+100000fb4: 00 00                       	addb	%al, (%rax)
+100000fb6: 00 00                       	addb	%al, (%rax)
+100000fb8: 1c 00                       	sbbb	$0, %al
+100000fba: 00 00                       	addb	%al, (%rax)
+100000fbc: 00 00                       	addb	%al, (%rax)
+100000fbe: 00 00                       	addb	%al, (%rax)
+100000fc0: 1c 00                       	sbbb	$0, %al
+100000fc2: 00 00                       	addb	%al, (%rax)
+100000fc4: 02 00                       	addb	(%rax), %al
+100000fc6: 00 00                       	addb	%al, (%rax)
+100000fc8: 80 0e 00                    	orb	$0, (%rsi)
+100000fcb: 00 34 00                    	addb	%dh, (%rax,%rax)
+100000fce: 00 00                       	addb	%al, (%rax)
+100000fd0: 34 00                       	xorb	$0, %al
+100000fd2: 00 00                       	addb	%al, (%rax)
+100000fd4: 51                          	pushq	%rcx
+100000fd5: 0f 00 00                    	sldtw	(%rax)
+100000fd8: 00 00                       	addb	%al, (%rax)
+100000fda: 00 00                       	addb	%al, (%rax)
+100000fdc: 34 00                       	xorb	$0, %al
+100000fde: 00 00                       	addb	%al, (%rax)
+100000fe0: 03 00                       	addl	(%rax), %eax
+100000fe2: 00 00                       	addb	%al, (%rax)
+100000fe4: 0c 00                       	orb	$0, %al
+100000fe6: 01 00                       	addl	%eax, (%rax)
+100000fe8: 10 00                       	adcb	%al, (%rax)
+100000fea: 01 00                       	addl	%eax, (%rax)
+100000fec: 00 00                       	addb	%al, (%rax)
+100000fee: 00 00                       	addb	%al, (%rax)
+100000ff0: 00 00                       	addb	%al, (%rax)
+100000ff2: 00 01                       	addb	%al, (%rcx)
+
+Disassembly of section __DATA_CONST,__got:
+
+0000000100001000 __got:
+		...
+
+Disassembly of section __DATA,__la_symbol_ptr:
+
+0000000100002000 __la_symbol_ptr:
+100002000: 6c                          	insb	%dx, %es:(%rdi)
+100002001: 0f 00 00                    	sldtw	(%rax)
+100002004: 01 00                       	addl	%eax, (%rax)
+100002006: 00 00                       	addb	%al, (%rax)
+100002008: 76 0f                       	jbe	15 <__dyld_private+0x9>
+10000200a: 00 00                       	addb	%al, (%rax)
+10000200c: 01 00                       	addl	%eax, (%rax)
+10000200e: 00 00                       	addb	%al, (%rax)
+
+Disassembly of section __DATA,__data:
+
+0000000100002010 __dyld_private:
+		...
+SYMBOL TABLE:
+0000000100002010 l     O __DATA,__data __dyld_private
+0000000000000000 l    d  *UND* /Users/natsunoyoru/Desktop/githubProj/linux-command-in-c/play_again/
+0000000000000000 l    d  *UND* play_again.c
+000000005f003cc7 l    d  __TEXT,__stub_helper __stub_helper
+0000000100000e80 l    d  __TEXT,__text __text
+0000000100000e80 l    d  __TEXT,__text __text
+0000000000000030 l    d  *UND* 
+0000000000000030 l    d  __TEXT,__text __text
+0000000100000eb0 l    d  __TEXT,__text __text
+0000000100000eb0 l    d  __TEXT,__text __text
+00000000000000a0 l    d  *UND* 
+00000000000000a0 l    d  __TEXT,__text __text
+0000000000000000 l    d  __TEXT,__text __text
+0000000100000000 g     F __TEXT,__text __mh_execute_header
+0000000100000eb0 g     F __TEXT,__text _get_response
+0000000100000e80 g     F __TEXT,__text _main
+0000000000000000         *UND* _getchar
+0000000000000000         *UND* _printf
+0000000000000000         *UND* dyld_stub_binder
